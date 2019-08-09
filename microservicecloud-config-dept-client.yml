@@ -33,13 +33,21 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
       defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: microservicecloud-config-dept-8001 #修改Eureka控制台集成实例的status
+    prefer-ip-address: true  # 浮于status连接时 访问路径显示ip
+
+info:  #信息完善
+  app.name: rc-microservicecloud
+  company.name: www.baidu.com
+#  build.version: ${project.version}$  # delimiter 不知道如何去设置
 
 ---
 server: 
   port: 8001
 
 spring: 
-  profiles: test
+  profiles: dev
   application: 
     name: microservicecloud-config-dept-client
   datasource: 
@@ -63,6 +71,12 @@ mybatis:
 eureka: 
   client: #客户端注册进eureka服务列表内
     service-url: 
-      defaultZone: http://eureka7001.com:7001/eureka      
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: microservicecloud-config-dept-8001 #修改Eureka控制台集成实例的status
+    prefer-ip-address: true  # 浮于status连接时 访问路径显示ip
 
-
+info:  #信息完善
+  app.name: rc-microservicecloud
+  company.name: www.baidu.com
+#  build.version: ${project.version}$  # delimiter 不知道如何去设置
